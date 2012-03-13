@@ -1,7 +1,5 @@
 package csit5100;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -9,6 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SupaCalTest {
+	private SupaCal cal = null;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,6 +19,8 @@ public class SupaCalTest {
 
 	@Before
 	public void setUp() throws Exception {
+		cal = new SupaCal();
+
 	}
 
 	@After
@@ -27,38 +28,28 @@ public class SupaCalTest {
 	}
 
 	@Test
-	public void testSupaCal() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testMain() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testDeleteEmptyDays() {
-		fail("Not yet implemented");
+		SupaCal.deleteEmptyDays();
 	}
 
 	@Test
 	public void testLoadMonth() {
-		fail("Not yet implemented");
+		SupaCal.loadMonth();
 	}
 
 	@Test
 	public void testSaveMonth() {
-		fail("Not yet implemented");
+		SupaCal.saveMonth();
 	}
 
 	@Test
 	public void testLoadContacts() {
-		fail("Not yet implemented");
+		SupaCal.loadContacts();
 	}
 
 	@Test
 	public void testSaveContacts() {
-		fail("Not yet implemented");
+		SupaCal.saveContacts();
 	}
 
 }

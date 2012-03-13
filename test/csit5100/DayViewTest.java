@@ -1,6 +1,7 @@
 package csit5100;
 
-import static org.junit.Assert.*;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,6 +10,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class DayViewTest {
+	private SupaCal gui = null;
+	private DayView dayView = null;
+	private Day day = null;
+	private SimpleDateFormat formater = new SimpleDateFormat("MMMM d - yyyy",
+			Locale.ENGLISH);
+	private String January = "January 1 - 2010";
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,35 +27,39 @@ public class DayViewTest {
 
 	@Before
 	public void setUp() throws Exception {
+		gui = new SupaCal();
+
+		day = new Day(formater.parse(January));
+		dayView = new DayView(day);
+
+		gui.setVisible(false);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-	}
-
-	@Test
-	public void testDayView() {
-		fail("Not yet implemented");
+		day = null;
+		dayView = null;
+		gui = null;
 	}
 
 	@Test
 	public void testSetAptList() {
-		fail("Not yet implemented");
+		dayView.setAptList();
 	}
 
 	@Test
 	public void testSetContactList() {
-		fail("Not yet implemented");
+		dayView.setContactList();
 	}
 
 	@Test
 	public void testSetupAptView() {
-		fail("Not yet implemented");
+		dayView.setupAptView();
 	}
 
 	@Test
 	public void testResetEverything() {
-		fail("Not yet implemented");
+		dayView.resetEverything();
 	}
 
 }
