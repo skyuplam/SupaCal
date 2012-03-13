@@ -62,4 +62,48 @@ public class DayViewTest {
 		dayView.resetEverything();
 	}
 
+	@Test
+	public void testNewApt(){
+		dayView.newApt.doClick();
+		dayView.startHour.setSelectedIndex(0);
+		dayView.startMinute.setSelectedIndex(0);
+		dayView.endHour.setSelectedIndex(0);
+		dayView.endMinute.setSelectedIndex(0);
+		dayView.title.setText("Title");
+		dayView.location.setText("Location");
+		dayView.notes.setText("Notes");
+		dayView.add.doClick();
+		
+		dayView.newApt.doClick();
+		dayView.startHour.setSelectedIndex(0);
+		dayView.startMinute.setSelectedIndex(0);
+		dayView.endHour.setSelectedIndex(1);
+		dayView.endMinute.setSelectedIndex(1);
+		dayView.title.setText("Title");
+		dayView.location.setText("Location");
+		dayView.notes.setText("Notes");
+		dayView.add.doClick();
+	}
+	
+	@Test
+	public void testDelApt(){
+		dayView.newApt.doClick();
+		dayView.startHour.setSelectedIndex(0);
+		dayView.startMinute.setSelectedIndex(0);
+		dayView.endHour.setSelectedIndex(1);
+		dayView.endMinute.setSelectedIndex(1);
+		dayView.title.setText("Title");
+		dayView.location.setText("Location");
+		dayView.notes.setText("Notes");
+		dayView.add.doClick();
+		dayView.aptList.setSelectedIndex(0);
+		dayView.delApt.doClick();
+	}
+	
+	@Test
+	public void testEditApt(){
+		dayView.aptList.setSelectedIndex(0);
+		dayView.editApt.doClick();
+		dayView.cancel.doClick();
+	}
 }

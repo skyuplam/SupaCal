@@ -1,5 +1,8 @@
 package csit5100;
 
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,12 +22,24 @@ public class SupaCalTest {
 
 	@Before
 	public void setUp() throws Exception {
+		SupaCal.loadMonth();
+		SupaCal.loadContacts();
 		cal = new SupaCal();
-
+		cal.setVisible(false);
 	}
 
 	@After
 	public void tearDown() throws Exception {
+	}
+	
+	@Test
+	public void testContactManagerView(){
+		cal.viewCalendar.doClick();
+	}
+	
+	@Test
+	public void testManagerContactsView(){
+		cal.manageContacts.doClick();
 	}
 
 	@Test
@@ -50,6 +65,13 @@ public class SupaCalTest {
 	@Test
 	public void testSaveContacts() {
 		SupaCal.saveContacts();
+	}
+	
+	@Test
+	public void testCloseWindow(){
+		cal.setDefaultCloseOperation(cal.EXIT_ON_CLOSE);
+		WindowEvent closingEvent = new WindowEvent(cal, WindowEvent.WINDOW_CLOSING);
+		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closingEvent);
 	}
 
 }

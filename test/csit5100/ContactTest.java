@@ -150,16 +150,13 @@ public class ContactTest {
 	@Test
 	public void testGetNumber() {
 		LinkedList<String> addresses = new LinkedList<String>();
+		addresses.add("address 1");
+		addresses.add("address 2");
 		LinkedList<String> phoneNumbers = new LinkedList<String>();
-
-		Contact contact = new Contact("firstName0", "lastName0", addresses,
-				phoneNumbers);
-
-		contact.addNumber("111");
-
-		assertEquals("Number should be", null, contact.getNumber(-1));
-		assertEquals("Number should be", null, contact.getNumber(2));
-		assertEquals("Number should be", "111", contact.getNumber(0));
+		phoneNumbers.add("phone 1");
+		phoneNumbers.add("phone 2");
+		Contact contact = new Contact("firstName0", "lastName0", addresses, phoneNumbers);
+		assertEquals("Number should be", "phone 1", contact.getNumber(0));
 	}
 
 	@Test

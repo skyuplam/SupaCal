@@ -125,9 +125,17 @@ public class DayTest {
 	}
 
 	@Test
-	public void testAptsToStrings() {
+	public void testAptsToStrings() throws ParseException {
+		SimpleDateFormat formater2 = new SimpleDateFormat(
+				"MMMM d - yyyy hh:mm", Locale.ENGLISH);
+		String January = "January 1 - 2010 00:00";
+		Date date = formater2.parse(January);
+		Appointment appt = new Appointment("Title", date, date,
+				"location", "notes", null);
+		
+		day.add(appt);
 		for (int i = 0; i < day.aptsToStrings().length; i++) {
-			assertEquals("testGetTheDate", today.toString(),
+			assertEquals("testGetTheDate", appt.toString(),
 					day.aptsToStrings()[i]);
 		}
 	}
