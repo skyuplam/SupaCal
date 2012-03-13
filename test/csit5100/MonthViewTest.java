@@ -60,7 +60,9 @@ public class MonthViewTest {
 	public void testDayClickedBtn() {
 		MonthView mv = SupaCal.monthView;
 		Calendar cal = Calendar.getInstance();
-		mv.days[0].doClick();
+		for (int i = 0; i < mv.days.length; i++) {
+			mv.days[i].doClick();
+		}
 	}
 
 	@Test

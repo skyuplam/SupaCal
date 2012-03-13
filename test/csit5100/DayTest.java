@@ -130,9 +130,9 @@ public class DayTest {
 				"MMMM d - yyyy hh:mm", Locale.ENGLISH);
 		String January = "January 1 - 2010 00:00";
 		Date date = formater2.parse(January);
-		Appointment appt = new Appointment("Title", date, date,
-				"location", "notes", null);
-		
+		Appointment appt = new Appointment("Title", date, date, "location",
+				"notes", null);
+
 		day.add(appt);
 		for (int i = 0; i < day.aptsToStrings().length; i++) {
 			assertEquals("testGetTheDate", appt.toString(),

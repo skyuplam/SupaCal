@@ -63,7 +63,7 @@ public class DayViewTest {
 	}
 
 	@Test
-	public void testNewApt(){
+	public void testNewApt() {
 		dayView.newApt.doClick();
 		dayView.startHour.setSelectedIndex(0);
 		dayView.startMinute.setSelectedIndex(0);
@@ -73,7 +73,7 @@ public class DayViewTest {
 		dayView.location.setText("Location");
 		dayView.notes.setText("Notes");
 		dayView.add.doClick();
-		
+
 		dayView.newApt.doClick();
 		dayView.startHour.setSelectedIndex(0);
 		dayView.startMinute.setSelectedIndex(0);
@@ -84,9 +84,9 @@ public class DayViewTest {
 		dayView.notes.setText("Notes");
 		dayView.add.doClick();
 	}
-	
+
 	@Test
-	public void testDelApt(){
+	public void testDelApt() {
 		dayView.newApt.doClick();
 		dayView.startHour.setSelectedIndex(0);
 		dayView.startMinute.setSelectedIndex(0);
@@ -99,9 +99,9 @@ public class DayViewTest {
 		dayView.aptList.setSelectedIndex(0);
 		dayView.delApt.doClick();
 	}
-	
+
 	@Test
-	public void testEditApt(){
+	public void testEditApt() {
 		dayView.aptList.setSelectedIndex(0);
 		dayView.editApt.doClick();
 		dayView.cancel.doClick();

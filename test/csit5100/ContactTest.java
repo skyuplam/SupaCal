@@ -155,7 +155,8 @@ public class ContactTest {
 		LinkedList<String> phoneNumbers = new LinkedList<String>();
 		phoneNumbers.add("phone 1");
 		phoneNumbers.add("phone 2");
-		Contact contact = new Contact("firstName0", "lastName0", addresses, phoneNumbers);
+		Contact contact = new Contact("firstName0", "lastName0", addresses,
+				phoneNumbers);
 		assertEquals("Number should be", "phone 1", contact.getNumber(0));
 	}
 

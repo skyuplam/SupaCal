@@ -31,14 +31,14 @@ public class SupaCalTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-	
+
 	@Test
-	public void testContactManagerView(){
+	public void testContactManagerView() {
 		cal.viewCalendar.doClick();
 	}
-	
+
 	@Test
-	public void testManagerContactsView(){
+	public void testManagerContactsView() {
 		cal.manageContacts.doClick();
 	}
 
@@ -66,12 +66,13 @@ public class SupaCalTest {
 	public void testSaveContacts() {
 		SupaCal.saveContacts();
 	}
-	
-	@Test
-	public void testCloseWindow(){
-		cal.setDefaultCloseOperation(cal.EXIT_ON_CLOSE);
-		WindowEvent closingEvent = new WindowEvent(cal, WindowEvent.WINDOW_CLOSING);
-		Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closingEvent);
-	}
+
+	// @Test
+	// public void testCloseWindow(){
+	// cal.setDefaultCloseOperation(cal.EXIT_ON_CLOSE);
+	// WindowEvent closingEvent = new WindowEvent(cal,
+	// WindowEvent.WINDOW_CLOSING);
+	// Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closingEvent);
+	// }
 
 }
