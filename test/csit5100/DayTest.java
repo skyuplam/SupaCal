@@ -16,11 +16,11 @@ import org.junit.Test;
 
 public class DayTest {
 	private Date today = new Date();
-	private SimpleDateFormat formater = new SimpleDateFormat("MMMM d - yyyy", Locale.ENGLISH);
-	
-	
+	private SimpleDateFormat formater = new SimpleDateFormat("MMMM d - yyyy",
+			Locale.ENGLISH);
+
 	Day day = null;
-	
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -40,7 +40,7 @@ public class DayTest {
 
 	@Test
 	public void testAddRemoveAppointment() {
-//		fail("Not yet implemented");
+		// fail("Not yet implemented");
 		Appointment appt = new Appointment("Title", new Date(), new Date(),
 				"location", "notes", null);
 		Appointment appt2 = new Appointment("Title2", new Date(), new Date(),
@@ -50,25 +50,26 @@ public class DayTest {
 		day.add(appt2);
 		day.add(appt2);
 		day.add(appt);
-		assertTrue("Test addAppointment",day.add(appt));
+		assertTrue("Test addAppointment", day.add(appt));
 		day.removeAppointment(appt);
 	}
 
 	@Test
 	public void testGetTotalAppointments() {
-		assertEquals("Test getTotalAppointments",0,day.getTotalAppointments());
+		assertEquals("Test getTotalAppointments", 0, day.getTotalAppointments());
 	}
 
 	@Test
 	public void testGetDayOfWeek() {
 		Calendar temp = Calendar.getInstance();
 		temp.setTime(today);
-		assertEquals("testGetDayOfWeek",temp.get(Calendar.DAY_OF_WEEK),day.getDayOfWeek());
+		assertEquals("testGetDayOfWeek", temp.get(Calendar.DAY_OF_WEEK),
+				day.getDayOfWeek());
 	}
 
 	@Test
 	public void testGetTheDate() {
-		assertEquals("testGetTheDate",today,day.getTheDate());
+		assertEquals("testGetTheDate", today, day.getTheDate());
 	}
 
 	@Test
@@ -109,24 +110,25 @@ public class DayTest {
 		Day OctoberDay = new Day(OctoberDate);
 		Day NovemberDay = new Day(NovemberDate);
 		Day DecemberDay = new Day(DecemberDate);
-		assertEquals("testToString",January,JanuaryDay.toString());
-		assertEquals("testToString",February,FebruaryDay.toString());
-		assertEquals("testToString",March,MarchDay.toString());
-		assertEquals("testToString",April,AprilDay.toString());
-		assertEquals("testToString",May,MayDay.toString());
-		assertEquals("testToString",June,JuneDay.toString());
-		assertEquals("testToString",July,JulyDay.toString());
-		assertEquals("testToString",August,AugustDay.toString());
-		assertEquals("testToString",September,SeptemberDay.toString());
-		assertEquals("testToString",October,OctoberDay.toString());
-		assertEquals("testToString",November,NovemberDay.toString());
-		assertEquals("testToString",December,DecemberDay.toString());
+		assertEquals("testToString", January, JanuaryDay.toString());
+		assertEquals("testToString", February, FebruaryDay.toString());
+		assertEquals("testToString", March, MarchDay.toString());
+		assertEquals("testToString", April, AprilDay.toString());
+		assertEquals("testToString", May, MayDay.toString());
+		assertEquals("testToString", June, JuneDay.toString());
+		assertEquals("testToString", July, JulyDay.toString());
+		assertEquals("testToString", August, AugustDay.toString());
+		assertEquals("testToString", September, SeptemberDay.toString());
+		assertEquals("testToString", October, OctoberDay.toString());
+		assertEquals("testToString", November, NovemberDay.toString());
+		assertEquals("testToString", December, DecemberDay.toString());
 	}
 
 	@Test
 	public void testAptsToStrings() {
-		for(int i = 0; i < day.aptsToStrings().length; i++){
-			assertEquals("testGetTheDate",today.toString(),day.aptsToStrings()[i]);
+		for (int i = 0; i < day.aptsToStrings().length; i++) {
+			assertEquals("testGetTheDate", today.toString(),
+					day.aptsToStrings()[i]);
 		}
 	}
 
