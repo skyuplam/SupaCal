@@ -2,6 +2,8 @@ package csit5100;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,6 +13,8 @@ import org.junit.Test;
 
 public class SupaCalTest {
 	private SupaCal cal = null;
+	private MonthView monthView = null;
+	private ContactsManager contactManager = null;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -25,21 +29,31 @@ public class SupaCalTest {
 		SupaCal.loadMonth();
 		SupaCal.loadContacts();
 		cal = new SupaCal();
+		monthView = cal.monthView;
+		contactManager = cal.contactsMgr;
 		cal.setVisible(false);
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		cal = null;
+		monthView = null;
+		contactManager = null;
+	}
+	
+	@Test
+	public void testMain(){
+		SupaCal.main(null);
 	}
 
 	@Test
 	public void testContactManagerView() {
-		cal.viewCalendar.doClick();
+		cal.manageContacts.doClick();
 	}
 
 	@Test
-	public void testManagerContactsView() {
-		cal.manageContacts.doClick();
+	public void testCalendarView() {
+		cal.viewCalendar.doClick();
 	}
 
 	@Test
